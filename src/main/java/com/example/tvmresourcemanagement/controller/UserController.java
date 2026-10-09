@@ -22,7 +22,6 @@ public class UserController {
     @ResponseStatus(HttpStatus.CREATED)
     public User createUser(
             @Valid @RequestBody UserCreateRequest request) {
-
         return userService.createUser(request);
     }
     @GetMapping("/{id}")
@@ -33,11 +32,11 @@ public class UserController {
     public List<UserResponse> getAllUsers() {
         return userService.getAllUsers();
     }
+
     @PutMapping("/{id}")
     public UserResponse updateUser(
             @PathVariable Long id,
             @Valid @RequestBody UserUpdateRequest request) {
-
         return userService.updateUser(id, request);
     }
     @PatchMapping("/{id}/status")
